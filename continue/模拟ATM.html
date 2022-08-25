@@ -12,20 +12,32 @@
         // 1.程序会使用到循环，反复出现窗口
         // 2.如果用户选择4，表示立即结束循环
 
-        let number = 0;
-        while (true) {
-            let num = prompt(`请选择您的操作: 1.存钱 2.取钱 3.查看余额 4.退出`)
-            if (num == 4) {
-                break;
-            }else if (num == 1) {
-                let number = prompt(`请输入您的存钱金额`)
-                
-            } else if(num == 2){
-                
-            }else if(num ==3){
-                alert(`您的余额还有 &(number)`)
-            }
+        let sum = 100;
+        //循环使用true可以无限循环，
+       while(true){
+        let num = prompt('请选择您的操作1.存钱2.取钱3.余额4.退出')
+        //如果输入结果为4直接打断整个循环
+        if (num == 4) {
+            break;
         }
+        switch (num) {
+            case '1':
+                let money = Number(prompt('请输入存款金额'));
+                sum = sum + money;
+                break;
+            case '2':
+                let money1 = prompt('请输入取款金额');
+                if (sum >= money1) {
+                    sum = sum - money1;
+                }else{
+                    alert('余额不足');
+                }
+                break;
+            case  '3':
+                alert(`当前余额账户是: ${sum} `);
+                break;
+        }
+       }
     </script>
 </body>
 </html>
